@@ -1,0 +1,108 @@
+﻿<Window x:Class="SampleApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:SampleApp"
+        mc:Ignorable="d" ResizeMode="NoResize" SizeToContent="WidthAndHeight"
+        Title="Sample App" Width="500" d:DesignHeight="1000"  >
+    <StackPanel Margin="8">
+        <!-- Material Design Card Component - START -->
+        <materialDesign:Card Padding="10" Margin="16,8" Height="200">
+            <Grid VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Kind="Xml" Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <StackPanel Grid.Column="1" Margin="2">
+                    <TextBlock FontWeight="Bold"  FontSize="18">1. Click the Button to get product info</TextBlock>
+                    <TextBlock Name="SN" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="14" Margin="8,8,8,2">SN :</TextBlock>
+                    <TextBlock Name="PN" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="14" Margin="8,2">PN :</TextBlock>
+                    <TextBlock Name="IO" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="14" Margin="8,2">IO :</TextBlock>
+                    <TextBlock Name="FW" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="14" Margin="8,2">FW :</TextBlock>
+                    <Button Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Right" Margin="8 4 8 8" Click="Button_Click" >Get Info</Button>
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+
+        <materialDesign:Card Padding="10" Margin="16,8" Height="200">
+            <Grid VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Kind="Dropbox" Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <StackPanel Grid.Column="1" Margin="2">
+                    <TextBlock FontWeight="Bold" FontSize="18">2. Please Sign In Dropbox Account</TextBlock>
+                    <Button Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Center" Margin="20" Click="Button_Click_1" >Sign in</Button>
+                    <StackPanel Orientation="Horizontal">
+                        <Viewbox Name="PIC" Width="50" Height="50">
+                            <Path Data="M9,11.75A1.25,1.25 0 0,0 7.75,13A1.25,1.25 0 0,0 9,14.25A1.25,1.25 0 0,0 10.25,13A1.25,1.25 0 0,0 9,11.75M15,11.75A1.25,1.25 0 0,0 13.75,13A1.25,1.25 0 0,0 15,14.25A1.25,1.25 0 0,0 16.25,13A1.25,1.25 0 0,0 15,11.75M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,11.71 4,11.42 4.05,11.14C6.41,10.09 8.28,8.16 9.26,5.77C11.07,8.33 14.05,10 17.42,10C18.2,10 18.95,9.91 19.67,9.74C19.88,10.45 20,11.21 20,12C20,16.41 16.41,20 12,20Z" Fill="Black" />
+                        </Viewbox>
+                        <StackPanel >
+                            <TextBlock Name ="FULLNAME" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" Margin="4">Name</TextBlock>
+                            <TextBlock Name="EMAIL" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" Margin="4">Email</TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+            </Grid>
+        </materialDesign:Card>
+
+        <materialDesign:Card Padding="10" Margin="16,8" Height="200" Visibility="Collapsed">
+            <Grid VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Kind="GoogleDrive" Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <StackPanel Grid.Column="1" Margin="2">
+                    <TextBlock FontWeight="Bold" FontSize="18">2. Please Sign In Google Account</TextBlock>
+
+                    <Button Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Center" Margin="8 15 8 8">Sign In</Button>
+                    <StackPanel Orientation="Horizontal" Margin="0,30">
+                        <Viewbox Width="50" Height="50">
+                            <Path Data="M9,11.75A1.25,1.25 0 0,0 7.75,13A1.25,1.25 0 0,0 9,14.25A1.25,1.25 0 0,0 10.25,13A1.25,1.25 0 0,0 9,11.75M15,11.75A1.25,1.25 0 0,0 13.75,13A1.25,1.25 0 0,0 15,14.25A1.25,1.25 0 0,0 16.25,13A1.25,1.25 0 0,0 15,11.75M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,11.71 4,11.42 4.05,11.14C6.41,10.09 8.28,8.16 9.26,5.77C11.07,8.33 14.05,10 17.42,10C18.2,10 18.95,9.91 19.67,9.74C19.88,10.45 20,11.21 20,12C20,16.41 16.41,20 12,20Z" Fill="Black" />
+                        </Viewbox>
+                        <StackPanel Margin="16,0">
+                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" Margin="4">Name</TextBlock>
+                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" Margin="4">Email</TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </materialDesign:Card>
+
+        <materialDesign:Card Padding="10" Margin="16,8" Height="200" Visibility="Collapsed">
+            <Grid VerticalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <materialDesign:PackIcon Kind="Dropbox" Width="64" Height="64" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <StackPanel Grid.Column="1" Margin="2">
+                    <TextBlock FontWeight="Bold" FontSize="18">3. Please Sign In Dropbox Account</TextBlock>
+                    <Button Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Center" Margin="8">Get secret</Button>
+                    <Grid Margin="8">
+                        <TextBox TextWrapping="Wrap" x:Name="TokenText" VerticalAlignment="Center" HorizontalAlignment="Left"  Width="200" GotFocus="TokenText_GotFocus" LostFocus="TokenText_LostFocus" Text="Enter user secret here" Tag="True" ></TextBox>
+                        <Button Style="{StaticResource MaterialDesignRaisedButton}" HorizontalAlignment="Right" >Confirm</Button>
+                    </Grid>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Viewbox Width="50" Height="50">
+                            <Path Data="M9,11.75A1.25,1.25 0 0,0 7.75,13A1.25,1.25 0 0,0 9,14.25A1.25,1.25 0 0,0 10.25,13A1.25,1.25 0 0,0 9,11.75M15,11.75A1.25,1.25 0 0,0 13.75,13A1.25,1.25 0 0,0 15,14.25A1.25,1.25 0 0,0 16.25,13A1.25,1.25 0 0,0 15,11.75M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,20C7.59,20 4,16.41 4,12C4,11.71 4,11.42 4.05,11.14C6.41,10.09 8.28,8.16 9.26,5.77C11.07,8.33 14.05,10 17.42,10C18.2,10 18.95,9.91 19.67,9.74C19.88,10.45 20,11.21 20,12C20,16.41 16.41,20 12,20Z" Fill="Black" />
+                        </Viewbox>
+                        <StackPanel Margin="16,0">
+                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" Margin="4">Name</TextBlock>
+                            <TextBlock TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="16" Margin="4">Email</TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+
+            </Grid>
+        </materialDesign:Card>
+    </StackPanel>
+
+</Window>
